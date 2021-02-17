@@ -1,8 +1,21 @@
 import tkinter as tk
+from tkinter import Canvas, PhotoImage
+
+import random
 
 window = tk.Tk()
 
 window.geometry('800x600')
+
+canvas = Canvas(window, bg="white", width=800, height=600)
+
+canvas.pack()
+
+imagePaper = PhotoImage(file='assets/img/paper.png')
+
+for elem in range(10):
+    canvas.create_image(random.randint(0, 800), random.randint(0, 600), image=imagePaper)
+#canvas.create_image(350, 230, image=imagePaper)
 
 ## Koordinatensystem --> Canvas initialisieren
 
